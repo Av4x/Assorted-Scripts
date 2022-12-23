@@ -1,3 +1,6 @@
+#This script checks for a few different HTTP headers relevant to cyber security. Headers checked for are taken from OWASP. 
+
+
 import requests as req
 import json
 from http.server import BaseHTTPRequestHandler
@@ -28,7 +31,7 @@ while i < 2:
     headers = response.headers
     headerKeys = response.headers.keys()
 
-
+#Check headers
     if 'Strict-Transport-Security' in headerKeys:
         print("Strict-Transport-Security: " + Fore.RED + "PRESENT")
         print(Style.RESET_ALL)
